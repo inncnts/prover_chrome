@@ -1,4 +1,3 @@
-# Impor library yang dibutuhkan
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,17 +9,11 @@ from selenium.common.exceptions import NoSuchElementException
 URL = "https://onprover.orochi.network"
 REFRESH_INTERVAL_SECONDS = 15 * 60
 
-# --- PENGATURAN WEB DRIVER (CARA MANUAL) ---
-# === BAGIAN INI DIUBAH ===
-# Arahkan path ini ke lokasi Anda menyimpan chromedriver.exe
-# Gunakan backslash ganda (\\) untuk path di Windows
 CHROME_DRIVER_PATH = "E:\\drivers\\chromedriver.exe"
 
 print("Mempersiapkan dan menginisialisasi browser Chrome (Mode Manual)...")
 try:
-    # Membuat service object yang menunjuk ke driver manual kita
     service = Service(executable_path=CHROME_DRIVER_PATH)
-    # Menjalankan Chrome dengan service object tersebut
     driver = webdriver.Chrome(service=service)
     print("Browser siap digunakan.")
 except Exception as e:
@@ -28,8 +21,6 @@ except Exception as e:
     print("Pastikan path di CHROME_DRIVER_PATH sudah benar dan menunjuk ke file chromedriver.exe.")
     exit()
 
-# --- FUNGSI UTAMA UNTUK REFRESH DAN PROVING ---
-# Fungsi ini tidak ada perubahan dari sebelumnya
 def refresh_and_prove():
     try:
         print(f"Membuka halaman: {URL}")
@@ -55,7 +46,6 @@ def refresh_and_prove():
         print(f"Terjadi kesalahan yang tidak terduga: {e}")
 
 # --- LOOP UTAMA SCRIPT ---
-# Loop utama juga tidak ada perubahan
 try:
     while True:
         refresh_and_prove()
